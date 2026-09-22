@@ -1,0 +1,41 @@
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# AI Models & Runs (Weights auto-download via Ultralytics)
+*.pt
+models/*.pt
+runs/
+helmet_dataset/
+
+# Captured live evidence (ignore dynamic captures, preserve samples)
+static/violations/violation_*.jpg
+violations/violation_*.jpg
+
+# IDE & OS
+.vscode/
+.idea/
+Thumbs.db
+stop_signal.txt
+
+# AI models
+models/
+
+# Large AI files and datasets
+models/
+helmet_dataset/

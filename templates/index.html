@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SafeSight AI Dashboard</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#0f172a;
+    color:white;
+    margin:0;
+}
+
+.header{
+    background:#020617;
+    padding:20px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.container{
+    padding:20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+    width:200px;
+    text-align:center;
+}
+
+.card h2{
+    font-size:30px;
+    margin:10px 0;
+}
+
+.gallery{
+    margin-top:40px;
+}
+
+.images{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.images img{
+    width:220px;
+    border-radius:8px;
+    border:2px solid #334155;
+}
+
+.stop-btn{
+    margin-top:30px;
+    padding:10px 20px;
+    background:red;
+    color:white;
+    border:none;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+🚦 SafeSight AI Helmet Detection Dashboard
+</div>
+
+<div class="container">
+<h2>📹 Live Camera Feed</h2>
+
+<img src="/video" width="700" style="border-radius:10px;">    
+
+<div class="cards">
+
+<div class="card">
+<p>Total Violations</p>
+<h2>{{images|length}}</h2>
+</div>
+
+<div class="card">
+<p>System Status</p>
+<h2 style="color:lime;">ACTIVE</h2>
+</div>
+
+<div class="card">
+<p>AI Model</p>
+<h2>YOLOv8</h2>
+</div>
+
+</div>
+
+<div class="gallery">
+
+<h2>🚨 Helmet Violations</h2>
+
+<div class="images">
+
+{% for img in images %}
+
+<img src="/static/violations/{{img}}">
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<a href="/stop">
+<button class="stop-btn">🛑 STOP SYSTEM</button>
+</a>
+
+</div>
+
+</body>
+</html>

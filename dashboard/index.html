@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SafeSight Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
+}
+
+h1{
+color:#00ffcc;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+padding:20px;
+}
+
+img{
+width:100%;
+border-radius:10px;
+}
+
+button{
+padding:15px;
+font-size:18px;
+background:red;
+color:white;
+border:none;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🚦 SafeSight AI Helmet Monitoring</h1>
+
+<a href="/stop">
+<button>STOP SYSTEM</button>
+</a>
+
+<h2>Detected Violations</h2>
+
+<div class="grid">
+
+{% for image in images %}
+
+<img src="{{ url_for('static', filename='violations/' + image) }}">
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>
